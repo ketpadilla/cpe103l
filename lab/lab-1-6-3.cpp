@@ -1,6 +1,6 @@
-/* // * LAB EXERCISE 1.5
-  Question 2
-  Redo program using for loops
+/* // * LAB EXERCISE 1.6
+  Question 3
+  Redo program using do-while loops
 */
 
 #include <iostream>
@@ -25,14 +25,14 @@ int main() {
   secondNum = getInput("second");
 
   // validate firstNum < secondNum, else reprompt
-  for (;;) {
+  do {
     if (secondNum <= firstNum) {
     cout << "Please enter a higher integer" << endl;
     secondNum = getInput("second");
     } else {
       break;
     }
-  }
+  } while (true);
 
   // output oddNumbers
   printOdd(firstNum, secondNum);
@@ -58,7 +58,7 @@ int main() {
 int getInput(string n) {
   int input; // initialize input variable
 
-  for (;;) { // infinite loop
+  do { // infinite loop
     cout << "Please enter the " << n << " integer: ";
     if (cin >> input) {
         return input; // return valid input
@@ -67,18 +67,21 @@ int getInput(string n) {
         cin.clear();
         cin.ignore(numeric_limits<streamsize>::max(), '\n');
     }
-  }
+  } while(true);
 }
 
 
 // print odd numbers 
 void printOdd(int firstNum, int secondNum) {
   cout << "The odd numbers between " << firstNum << " and " << secondNum << " are: ";
-  for (int i = firstNum + 1; i < secondNum; i++) {
+  int i = firstNum + 1;
+  do {
     if (i % 2 != 0) {
       cout << i << " ";
-    }
-  } cout << endl;
+    } i++;
+  } while (i < secondNum);
+  
+  cout << endl;
 }
 
 
@@ -86,24 +89,35 @@ void printOdd(int firstNum, int secondNum) {
 void printEvenSum(int firstNum, int secondNum) {
   int evenSum = 0;
   cout << "The sum of even numbers between " << firstNum << " and " << secondNum << " is: ";
-  for (int i = firstNum + 1; i < secondNum; i++) {
+  int i = firstNum + 1;
+  do {
     if (i % 2 == 0) {
       evenSum += i;
-    }
-  } cout << evenSum << endl;
+    } i++;
+  } while (i < secondNum);
+
+  cout << evenSum << endl;
 }
 
 
 // print the numbers and their squares
 void printNumSquares(int firstNum, int secondNum) {
   cout << "The numbers and the their squares between " << firstNum << " and " << secondNum << " are:" << endl;
-  for (int i = firstNum + 1; i < secondNum; i++) {
+  int i = firstNum + 1;
+  do {
     cout << i << " ";
-  } cout << endl;
+    i++;
+  } while (i < secondNum);
+  
+  cout << endl;
 
-  for (int j = firstNum + 1; j < secondNum; j++) {
+  int j = firstNum + 1;
+  do {
     cout << j*j << " ";
-  } cout << endl;
+    j++;
+  } while (j < secondNum);
+  
+  cout << endl;
 }
 
 
@@ -111,9 +125,12 @@ void printNumSquares(int firstNum, int secondNum) {
 void printSumSquareOdd(int firstNum, int secondNum) {
   int oddSquareSum = 0;
   cout << "The sum of the squares of the odd numbers between " << firstNum << " and " << secondNum << " is: ";
-  for (int i = firstNum + 1; i < secondNum; i++) {
+  int i = firstNum + 1;
+  do {
     if (i % 2 != 0) {
       oddSquareSum += (i*i);
-    }
-  } cout << oddSquareSum << endl;
+    } i++;
+  } while (i < secondNum);
+  
+  cout << oddSquareSum << endl;
 }

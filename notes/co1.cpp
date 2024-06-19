@@ -55,6 +55,35 @@ int main() {
 
   */
   // loops();
+
+  /* // * Lec4
+  HEADERS
+  1. cmath
+  2. cctype
+  3. cstdlib
+
+  FUNCTIONS
+  * Syntax 
+    functionType functionName (formal parameter list) {
+      statements
+    }
+  
+  PARAMETERS
+  1. value 
+  2. reference - address
+    - for changing actual parameter
+    - for returning more than one value
+    - for passing address
+  3. formal
+
+  Scope
+  Local and Global Identifier
+   
+  Static variables - local to the block; within the block
+  
+  DRIVER - tests a function
+  FUNCTION STUB = not fully coded function
+  */
   eofLoop();
 }
 
@@ -183,3 +212,7 @@ void eofLoop() {
 
   cout << "Sum: " << sum << endl;
 }
+
+
+
+
